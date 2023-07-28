@@ -2,6 +2,7 @@
       <html>
         <head>
           <title>SB Products</title>
+          <link rel="icon" type="image/x-icon" href="/static/sblogo.jpg">
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -35,36 +36,41 @@
             <p class="text-center mt-2 mb-4" class="lead">For more than five decades, we’ve focused our expertise solely on this market, providing a broad suite of annuities and mutual fund programs to help customers align their assets with their aspirations.</p>
             <h2 class="text-center mt-2 mb-4">Explore Your Retirement Options
             </h2>
+            
             <h3 class="text-center mt-2 mb-1">Fixed Annuity Rates</h3>
           <div class="text-center border-bottom">
             {% for faproduct in faproducts %}
-            <p> {{faproduct['name']}}
-            </p>
+          <p><a href="{{faproduct['url']}}">{{faproduct['name']}}</a>
+          </p>
             {% endfor %}
-            </div>
+          </div>
              <h3 class="text-center mt-4 mb-1">Fixed Index Annuity Rates</h3>
           <div class="text-center border-bottom">
             {% for fiaproduct in fiaproducts %}
-            <p> {{fiaproduct['name']}}
-            </p>
+            <p><a href="{{fiaproduct['url']}}">{{fiaproduct['name']}}</a>
+          </p>
             {% endfor %}
-            </div>
+          </div>
+            
             <h3 class="text-center mt-4 mb-1">Variable Annuity Rates</h3>
           <div class="text-center border-bottom">
             {% for vaproduct in vaproducts %}
-            <p> {{vaproduct['name']}}
-            </p>
+            <p><a href="{{vaproduct['url']}}">{{vaproduct['name']}}</a>
+          </p>
             {% endfor %}
             </div>
-            <div class="text-center mt-4 mb-0"
-            <p><b>SUBSCRIBE FOR RATES</b></p>
+
+            <div class="text-center mt-2 mb-0"
+            <p><b>CONNECT WITH OUR REPS</b></p>
             </div>
-            <div class="input-group mt-0 mb-5">
-  <input type="text" class="form-control" placeholder="Enter Email Address" aria-label="Email Address" aria-describedby="button-addon2">
-  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
-</div>
+            <div class="input-group mt-0 mb-0">
+            </div>
+            <div class="mt-0 mb-5" style="text-align:center;">
+            <a href="mailto:kaila.gonzalez@securitybenefit.com?subject=Connect%20me%20with%20a%20Security%20Benefit%20representative&body=My%20Name%3A%20%3Center%20name%3E%0D%0AI%20am%20interested%20in%20Security%20Benefit%20Product%3A%20%3Center%20product%3E%0D%0AMy%20Question%3A%20%3Center%20question%3E" button type="button" class="btn btn-primary btn-lg">Contact Us</a>
       </div>
+          </div>
         </div>
           </div>
+          {% include 'footer.html' %}
         </body>
       </html>
